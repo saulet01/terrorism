@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Global Terrorism</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="img/icon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/icon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/icon/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/nouislider.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><i class="fas fa-globe-americas"></i> Final Project</a>
+      <a class="navbar-brand" href="organization.html"><i class="fas fa-chart-line"></i> Supplementary Charts</a>
+    </div>
+  </nav>
+
+  <div class="jumbotron jumbotron-fluid shadow-lg">
+      <h1 class="title_text">A Visualization for Global Terrorism</h1>
+      <div class="github_link">
+        <a class="btn btn-outline-danger mt-4 mr-3" href="https://github.com/washuvis/terrorism" role="button">Github</a>
+        <a class="btn btn-outline-danger mt-4" href="https://xuyumi.github.io/SIZ-Process-Book/" role="button">Process Book</a>
+      </div>
+      <div class="mt-4">
+        <p class="lead isabelle">Isabelle Xu &nbsp;&nbsp;&nbsp;isabelle.xu@wustl.edu &nbsp;&nbsp;&nbsp;451246 </p>
+        <p class="lead saulet">Saulet Yskak &nbsp;&nbsp;&nbsp;saulet@wustl.edu &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;467511</p>
+        <p class="lead zhikai">Zhikai Chen &nbsp;&nbsp;&nbsp;chen.zhikai@wustl.edu &nbsp;&nbsp;&nbsp;451501</p>
+      </div>
+  </div>
+
+  <div class="container">
+    <div class="alert alert-warning" role="alert">
+      <p id="desc">
+        This is a visualization depicting the trends of terrorist attacks world wide from 1970 to 2017. Double click on a
+        country in order to gain a more detailed view and use the two handles of the slider to select a specific time
+        frame to examine. Additional charts can be accessed through the link in the upper
+        right corner labeled "supplementary charts". Please note that the data may take a few seconds to fully load on first initiation.
+      </p>
+    </div>
+    <div class="row">
+      <div class="col-12 col-lg-12">
+        <h2 class="display-4 text-center">Timeline</h2>
+      </div>
+    </div>
+    <div class="row">
+        <!--UI Slider-->
+      <div class="col-12 col-lg-12" id="drag"></div>
+      <span class="mr-auto my-2" id="lower-value"></span>
+      <span class="ml-auto my-2" id="upper-value"></span>
+    </div>
+  </div>
+  <div class="loader" id="loader"></div>
+  <div id="worldMap" class=""></div>
+  <hr />
+  <h2 class="display-4 text-center">Top 10 Terrorist Attacks</h2>
+  <div id="barChart" class=""></div>
+
+  <!-- Button trigger modal -->
+  <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".country_information">
+    Launch demo modal
+  </button> -->
+
+  <!-- Modal for Additional Information about Countries-->
+  <div class="modal fade country_information" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-side modal-top-left" role="document">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <h5 class="modal-title country_title" id="country_name"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p class="modal_text_country" id="country_attack"></p>
+          <p class="modal_text_country" id="country_dead"></p>
+          <p class="modal_text_country" id="country_wounded"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--  Modal for Additional Information about Terorist Action -->
+  <div class="modal fade detail-information" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header shadow-sm">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-lg-6 paint_container">
+                <img src="img/died.png" alt="image" id="died_numbers">
+                <h6 class="display-5 text-center centered-top text-white">Died:</h6>
+                <h6 class="display-4 text-center centered text-white" id="died2"></h6>
+              </div>
+              <div class="col-lg-6 paint_container">
+                <img src="img/wounded.png" alt="image" id="wounded_numbers">
+                <h6 class="display-5 text-center centered-top text-white">Wounded:</h6>
+                <h6 class="display-4 text-center centered text-white" id="wounded2"></h6>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-5">
+              <img class="img-thumbnail shadow-sm" id="image_terror" alt="terrorism">
+            </div>
+            <div class="col-lg-7 mod-text">
+              <h5 class="display-5">Location: </h5>
+              <p class="lead display-5" id="location1"></p><br />
+              <h5 class="display-5">Terrorist organization: </h5>
+              <p class="lead display-5" id="organization-terror"></p><br />
+              <h5 class="display-5">Attack Type: </h5>
+              <p class="lead display-5" id="attack-type"></p><br />
+              <h5 class="display-5">Target: </h5>
+              <p class="lead display-5" id="target-type"></p><br />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <hr>
+              <h5 class="display-5">Summary: </h5>
+              <p class="lead" id="summary-description"></p><br />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src='js/countUp.min.js'></script>
+  <script src="js/d3.min.js"></script> <!-- Version 4 -->
+  <script src="js/topojson.v2.min.js"></script>
+  <script src="js/nouislider.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+  <script src="js/queue.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

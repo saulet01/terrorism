@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Proposal: A Visualization for Global Terrorism</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!--  Navbar: Adapted from: https://getbootstrap.com/docs/4.3/components/navbar/-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="https://wustl.edu/">Proposal Book</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar2" aria-controls="navbar2" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar2">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="#background">Background and Motivation<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#objective">Objectives</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#data">Data</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#sketches">Sketches</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#schedule">Schedule</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--  /Navbar -->
+  <!--  Jumbotron Adapted from: https://getbootstrap.com/docs/4.3/components/jumbotron/ -->
+<div class="jumbotron jumbotron-fluid shadow">
+  <div class="container">
+    <h1 class="display-4 text-center text-danger">A Visualization for Global Terrorism</h1>
+    <div class="my-4">
+      <p class="lead text-center">Isabelle Xu &nbsp;&nbsp;&nbsp;isabelle.xu@wustl.edu &nbsp;&nbsp;&nbsp;451246 <br>Saulet Yskak &nbsp;&nbsp;&nbsp;saulet@wustl.edu &nbsp;&nbsp;&nbsp;467511<br>Zhikai Chen &nbsp;&nbsp;&nbsp;chen.zhikai@wustl.edu &nbsp;&nbsp;&nbsp;451501</p>
+    </div>
+    <div class="textJumbotron">
+      Project Repository: <a href="https://github.com/xuyumi/A-Visualization-for-Global-Terrorism">https://github.com/xuyumi/A-Visualization-for-Global-Terrorism</a><br>
+      Dataset: <a href="https://www.kaggle.com/START-UMD/gtd">https://www.kaggle.com/START-UMD/gtd</a>
+    </div>
+  </div>
+</div>
+<!--  /Jumbotron -->
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-lg-12">
+      <h2 class="my-4 text-danger" id="background">Background and Motivation</h2>
+      <p>
+          In the beginning of the project, we have chosen NBA datasets to work with. However, on Friday, March 15th, 2019,
+          there was a devastating terror attack on two mosques in Christchurch, New Zealand, where 55 people were killed and
+          50 others were wounded. After being exposed to related videos and photos, we were very upset and devastated, and
+          would like to work with global terrorism attack datasets to help provide a deeper insight into the different aspects
+          of global terrorism in modern society, spanning from 1970 to 2017, especially since terrorism has unfortunately
+          gained much more media attention as of late. As these events have been painfully recent, we believe that it is
+          important to be aware of the circumstances surrounding terrorism and how it impacts the world on a global scale,
+          while at the same time being careful to not promote biases and to remain rational in regards to these events.
+      </p>
+      <p>
+          Source:
+          <a href="https://www.cnn.com/2019/03/15/asia/new-zealand-christchurch-attack-what-we-know-intl/index.html">https://www.cnn.com/2019/03/15/asia/new-zealand-christchurch-attack-what-we-know-intl/index.html</a>
+      </p>
+    </div>
+    <div class="col-12 col-lg-12">
+      <hr >
+      <h2 class="my-4 text-danger" id="objective">Project Objectives</h2>
+      <ol>
+          <li>Where did terrorist attacks happen most frequently within this time frame? This would give an overview on how
+              severe the terrorist problem is in certain areas.
+          </li>
+          <li>How frequent do terrorist attacks happen in a certain region? This would also show severity of the problem.</li>
+          <li>How many people were involved? Perpetrators? Victims? This would show the magnitude of each attack and how
+              widespread the damage was in context to the local population.
+          </li>
+          <li>Who or what was targeted in these attacks? Who carried out these attacks? This question would give a broader
+              general overview on who was involved.
+          </li>
+      </ol>
+    </div>
+    <div class="col-12 col-lg-12">
+      <hr>
+      <h2 class="my-4 text-danger" id="data">Data</h2>
+      <p>We found the dataset we need on Kaggle. It contains information on more than 180.000 terrorist attacks that have
+          occurred between 1970 and 2017. It’s an comprehensive dataset that contains more than 135 columns. We believe this
+          dataset provides great flexibility in terms of visualizing time series, and geospatial dimensions of terrorist
+          attacks.
+      </p>
+    </div>
+    <div class="col-12 col-lg-12">
+      <h4 class="my-2">Data Processing</h4>
+      <p>
+          We expect to do a decent amount of data cleanup to keep the columns we need, and aggregate necessary data to extract
+          information we need. There is also formatting to consider, depending on the type of chart being used. Therefore, we plan to deal with data cleanup in Python and use pandas,
+          matplotlib.
+      </p>
+    </div>
+    <div class="col-12 col-lg-12">
+      <hr>
+      <h2 class="my-4 text-danger">Visualization Design</h2>
+      <h4 class="my-2">Must-Have Features:</h4>
+      <ol>
+          <li>Some representation of geospatial location, AKA some form of map perspective to show locations where attacks
+              took place.
+          </li>
+          <li>A select feature that would show more specific information to each attack.
+          </li>
+          <li>Data filtering to isolate and show specific types of attacks or different facets of information more clearly.
+          </li>
+      </ol>
+      <h4 class="my-2">Optional Features:</h4>
+      <ol>
+          <li>Additional tooltips to show more detailed information without having to specifically select something
+          </li>
+          <li>Additional legends to help clarify what is being displayed
+          </li>
+          <li>Perhaps a zooming feature on the map that can zoom in and show greater specifics for each city or village.
+          </li>
+          <li>Other features that may be readily available and feasible should additional related d3-libraries be found.</li>
+      </ol>
+    </div>
+    <div class="col-12 col-lg-12">
+      <hr>
+      <h2 class="my-4 text-danger" id="sketches">Sketches</h2>
+      <h5 class="my-3">Sketch #1: World Map with supplementary graphs</h5>
+      <img src="img/1.png" class="img-thumbnail rounded mx-auto d-block shadow mb-4" alt="Sketch 1">
+      <h5 class="my-3 mt-4">Sketch #2: World Map with timeline, filter and legend</h5>
+      <img src="img/2.png" class="img-thumbnail rounded mx-auto d-block shadow mb-4" alt="Sketch 2">
+      <h5 class="my-3 mt-4">Sketch #3: Topographic map idea</h5>
+      <img src="img/3.jpg" class="img-thumbnail rounded mx-auto d-block shadow mb-4" alt="Sketch 3">
+      <h5 class="my-3 mt-4">Sketch #4: Additional Bubble Chart for “Top Terrorist Organizations”</h5>
+      <img src="img/4.png" class="img-thumbnail rounded mx-auto d-block shadow mb-4" alt="Sketch 4">
+      <h5 class="my-3 mt-4">Sketch #5: Possible map scaling based design</h5>
+      <img src="img/5.jpg" class="img-thumbnail rounded mx-auto d-block shadow mb-4" alt="Sketch 5">
+      <h3 class="my-3 mt-4">Final Design</h3>
+      <img src="img/6.jpg" class="img-thumbnail rounded mx-auto d-block shadow mb-4" alt="Sketch Final Design">
+    </div>
+    <div class="col-12 col-lg-12">
+      <hr>
+      <h2 id="schedule" class="my-4 text-danger">Project Schedule</h2>
+      <h5>Project Timeline from March 18th to April 29th:</h5>
+      <table class="table table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Week #</th>
+            <th scope="col">Todo List</th>
+            <th scope="col">Due Dates</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Week 1 <br>3/18 - 3/23</th>
+            <td>
+              <ol>
+                <li>Complete proposal</li>
+                <li>Start data wrangling</li>
+              </ol>
+            </td>
+            <td rowspan="7">
+              <p>Project proposal (due Mar 18)</p>
+              <p>Milestone I - a functional project prototype (due Apr 1)</p>
+              <p>Milestone II - a fully functional prototype (due Apr 15)</p>
+              <p>In-class user studies (Apr 18)</p>
+              <p>Final project presentation (Apr 25)</p>
+              <p>Final project submission & peer evaluations (due Apr 29)</p>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Week 2 <br>3/24 - 3/20</th>
+            <td>
+              <ol>
+                <li>Finish data wrangling</li>
+                <li>Begin design and implementation</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Week 3 <br>3/31 - 4/6</th>
+            <td>COMPLETE MILESTONE I</td>
+          </tr>
+          <tr>
+            <th scope="row">Week 4 <br> 4/7 - 4/13</th>
+            <td>
+              <ol>
+                <li>Debugging + continue implementation</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Week 5 <br>4/14 - 4/20</th>
+            <td>
+              <ol>
+                <li>Begin project website</li>
+                <li>Begin process book webpage</li>
+                <li>Debugging + continue implementation</li>
+              </ol>
+              COMPLETE MILESTONE II
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Week 6 <br>4/21 - 4/27</th>
+            <td>
+              <ol>
+                <li>Finalize visualization and project website</li>
+                <li>Prepare project presentation</li>
+                <li>Finalize process book webpage</li>
+                <li>Peer assessment</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Due Date Week <br>4/28 - 4/29</th>
+            <td>HAND IN FINAL PROJECT</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+          Generally, we plan to split the programming 3 ways:
+      </p>
+      <ul>
+        <li>Isabelle: Data wrangling</li>
+        <li>Saulet: Design</li>
+        <li>Zhikai: Implementation</li>
+      </ul>
+      <p class="mb-5">
+          However, there will most likely be overlapping coding responsibilities as one leads into the other, and since the
+          implementation itself may be quite labor intensive. We also plan to split the additional non-programming work
+          evenly.
+      </p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

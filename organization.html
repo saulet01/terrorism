@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Global Terrorism</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="img/icon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/icon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/icon/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!--  Navbar -->
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><i class="fas fa-globe-americas"></i> Final Project</a>
+      <a class="navbar-brand" href="organization.html"><i class="fas fa-chart-line"></i> Supplementary Charts</a>
+    </div>
+  </nav>
+  <!--  /Navbar -->
+
+  <!--  Jumbotron -->
+  <div class="jumbotron jumbotron-fluid shadow-lg">
+      <h1 class="title_text">A Visualization for Global Terrorism</h1>
+      <div class="github_link">
+        <a class="btn btn-outline-danger mt-4 mr-3" href="https://github.com/washuvis/terrorism" role="button">Github</a>
+        <a class="btn btn-outline-danger mt-4" href="https://xuyumi.github.io/SIZ-Process-Book/" role="button">Process Book</a>
+      </div>
+      <div class="mt-4">
+        <p class="lead isabelle">Isabelle Xu &nbsp;&nbsp;&nbsp;isabelle.xu@wustl.edu &nbsp;&nbsp;&nbsp;451246 </p>
+        <p class="lead saulet">Saulet Yskak &nbsp;&nbsp;&nbsp;saulet@wustl.edu &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;467511</p>
+        <p class="lead zhikai">Zhikai Chen &nbsp;&nbsp;&nbsp;chen.zhikai@wustl.edu &nbsp;&nbsp;&nbsp;451501</p>
+      </div>
+  </div>
+  <!--  /Jumbotron -->
+
+  <div class="row">
+    <div class="col-6 col-lg-6">
+      <h1 class="text_terrorism">Number of Attacks Globally per year</h1>
+    </div>
+    <div class="col-6 col-lg-6">
+      <h1 class="text_terrorism">Number of Victims per year</h1>
+    </div>
+  </div>
+  <p class="text_transparent">1970 - </p>
+  <p class="text_transparent_2" id="count_number">2017</p>
+  <p class="text_transparent_3">1970 - </p>
+  <p class="text_transparent_4" id="count_number_2">2017</p>
+  <div class="row">
+    <div class="col-6 col-lg-6" id="line_chart_count"></div>
+    <div class="col-6 col-lg-6" id="line_chart_victims"></div>
+  </div>
+  <hr />
+  <!--  Quiz Content -->
+    <div class="row" data-aos="fade-down">
+      <div class="col-12 col-lg-12 text-center quiz_section">
+
+        <p id="typed"></p>
+      </div>
+    </div>
+    <div class="row ml-2">
+      <div class="col-lg-5 test_div">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <input type="radio" aria-label="radio_button1" name="test" value="Taliban">
+            </div>
+          </div>
+          <input id="taliban" type="text" class="form-control" aria-label="radio_button1" placeholder="Taliban" disabled>
+        </div>
+        <div class="input-group my-4">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <input type="radio" aria-label="radio_button2" name="test" value="Qaeda">
+            </div>
+          </div>
+          <input id="al_qaeda" type="text" class="form-control" aria-label="radio_button2" placeholder="Al-Qaeda" disabled>
+        </div>
+        <div class="input-group my-4">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <input type="radio" aria-label="radio_button3" name="test" value="Islamic State of Iraq and the Levant (ISIL)">
+            </div>
+          </div>
+          <input id="isil" type="text" class="form-control" aria-label="radio_button3" placeholder="Islamic State of Iraq and the Levant (ISIL)" disabled>
+        </div>
+        <div class="input-group my-4">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <input type="radio" aria-label="radio_button4" name="test" value="Boko Haram">
+            </div>
+          </div>
+          <input id="boko_haram" type="text" class="form-control" aria-label="radio_button4" placeholder="Boko Haram" disabled>
+        </div>
+        <div class="input-group my-4">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <input type="radio" aria-label="radio_button5" name="test" value="Liberation Tigers of Tamil Eelam (LTTE)">
+            </div>
+          </div>
+          <input id="ltte" type="text" class="form-control" aria-label="radio_button5" placeholder="Liberation Tigers of Tamil Eelam (LTTE)" disabled>
+        </div>
+      </div>
+      <div class="col-12 col-lg-7">
+        <p class="lead text-center mt-3 note_organization">Top 25 Terrorist Organizations from 1970 - 2017</p>
+        <div class="bubble_chart remove_class" >
+        </div>
+      </div>
+    </div>
+    <div class="mb-5">
+
+    </div>
+    <!--  /Quiz Content -->
+
+    <!-- Modal Content -->
+    <div class="modal fade detail-information" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header shadow-sm">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-lg-4 paint_container">
+                  <img src="img/died.png" alt="" id="died_numbers">
+                  <h6 class="display-5 text-center centered-top text-white">Died</h6>
+                  <h6 class="text-center centered text-white number_count" id="died2"></h6>
+                </div>
+                <div class="col-lg-4 paint_container">
+                  <img src="img/wounded.png" alt="" id="wounded_numbers">
+                  <h6 class="display-5 text-center centered-top text-white">Wounded</h6>
+                  <h6 class="text-center centered text-white number_count" id="wounded2"></h6>
+                </div>
+                <div class="col-lg-4 paint_container">
+                  <img src="img/attacks.png" alt="" id="attack_numbers">
+                  <h6 class="display-5 text-center centered-top text-white">Attacked</h6>
+                  <h6 class="text-center centered text-white number_count" id="attacked2"></h6>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12 text-center">
+                <span class="badge badge-danger" id="organization_name"></span>
+              </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-5">
+                <img class="img-thumbnail shadow-sm try-photo" src="img/terror.jpg" alt="" id="photo_terror">
+              </div>
+              <div class="col-lg-7 mod-text">
+                <h5 class="display-5">Active:</h5>
+                <p class="lead" id="active_time"></p><br />
+                <h5 class="display-5">Ideology: </h5>
+                <p class="lead" id="ideology_teror"></p><br />
+                <h5 class="display-5 source_inline">Source: </h5>
+                <a id="source_link"></a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12">
+                <hr>
+                <h5 class="display-5">Summary: </h5>
+                <p class="lead" id="summary-description"></p><br />
+              </div>
+            </div>
+          </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /Modal Content -->
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src='js/countUp.min.js'></script>
+  <script src="js/d3.min.js"></script> <!-- Version 4 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/organizations.js"></script>
+  <script src="js/typed.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

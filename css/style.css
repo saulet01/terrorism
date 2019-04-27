@@ -1,0 +1,399 @@
+body{
+  overflow-x: hidden;
+}
+
+/* =================================
+      World Map Visualization
+==================================== */
+
+.legendLinear text.label {
+    fill: black;
+}
+
+.noUi-tooltip {
+    display: none;
+}
+.noUi-active .noUi-tooltip {
+    display: block;
+}
+
+.noUi-connect {
+    background: #F16868;
+}
+
+circle:hover{
+  stroke-width: 2;
+  stroke: black;
+  opacity: 1;
+}
+
+/* =================================
+                Modal
+==================================== */
+
+.mod-text p, .mod-text h5{
+  display: inline-block;
+  font-size: 18px;
+}
+
+.number_count{
+  font-size: 25px;
+}
+
+.source_inline{
+  display: block !important;
+}
+
+#died_numbers, #wounded_numbers, #attack_numbers{
+  width: 60%;
+}
+
+.paint_container{
+  position: relative;
+  text-align: center;
+}
+
+.centered {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.centered-top{
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#organization_name{
+  font-size: 24px;
+  margin: 0.8em;
+}
+
+#summary-description{
+  font-size: 16px;
+}
+
+.try-photo{
+  width: 300px;
+}
+
+.country_title{
+  font-size: 2.5em;
+  color: #F16868;
+}
+
+.modal_text_country{
+  font-size: 1.3em;
+  font-weight: 300;
+}
+
+.modal-side{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  margin: 0;
+  width: 400px;
+}
+
+.modal .modal-dialog.modal-top-left {
+  top: 10px;
+  left: 10px;
+}
+
+.modal-open {
+  overflow-y: auto
+}
+
+/* =================================
+              Jumbotron
+==================================== */
+
+.jumbotron{
+  min-height: 397px;
+  background-image: url('../img/backgorund_jumbotron_1.png');
+  background-size: cover;
+}
+
+.title_text{
+  font-size: 2.5em;
+  margin-left: 0.31em;
+  color: #F16868;
+}
+
+.github_link{
+  margin-left: 15em;
+}
+
+.isabelle{
+  margin-left: 7em;
+  color: #3A3C3E;
+  font-size: 1.1em;
+}
+
+.saulet{
+  margin-left: 10em;
+  color: #3A3C3E;
+  font-size: 1.1em;
+}
+
+.zhikai{
+  margin-left: 13em;
+  color: #3A3C3E;
+  font-size: 1.1em;
+}
+
+.btn-outline-danger {
+  color: #F16868;
+  border-color: #F16868;
+}
+
+/* =================================
+        Bar Chart Visualization
+==================================== */
+.bar{
+  fill: #F16868;
+}
+
+.bar:hover{
+  stroke-width: 2;
+  stroke: black;
+}
+
+.x-axis path {
+  display: none;
+}
+
+.bar_legend{
+  transform: rotate(-90deg);
+}
+
+/* =================================
+      Line Charts Visualization
+==================================== */
+.text_transparent{
+  position: absolute;
+  top: 700px;
+  left: 180px;
+  font-weight: 300;
+  font-size: 3em;
+  color: #F16868;
+}
+
+.text_transparent_2{
+  position: absolute;
+  top: 700px;
+  left: 320px;
+  font-weight: 300;
+  font-size: 3em;
+  color: #F16868;
+}
+
+.text_transparent_3{
+  position: absolute;
+  top: 700px;
+  left: 850px;
+  font-weight: 300;
+  font-size: 3em;
+  color: #F16868;
+}
+
+.text_transparent_4{
+  position: absolute;
+  top: 700px;
+  left: 990px;
+  font-weight: 300;
+  font-size: 3em;
+  color: #F16868;
+}
+
+.text_terrorism{
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 1em;
+  margin-top: 0.5em;
+}
+
+.area_chart{
+  fill: none;
+  stroke:  #F16868;
+  stroke-width: 3;
+}
+
+.text_axis{
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.text_y{
+  font-size: 11px;
+  font-weight: 300;
+}
+
+@keyframes animate_line {
+  100%{
+    stroke-dashoffset: 0%;
+  }
+}
+
+@keyframes area {
+  20%{
+    fill: #fdbd5e;
+  }
+
+  100%{
+    stroke: #F16868;
+    stroke-width: 1;
+    fill: #F16868;
+  }
+}
+
+/* =================================
+  Bubble Chart Visualization
+==================================== */
+
+.bubble2{
+  fill: #F16868;
+  opacity: 0.9;
+  transition-duration: .3s;
+  transition-property: fill;
+}
+
+.bubble2:hover{
+  opacity: 1;
+  fill: #C74F60;
+  font-weight: bold;
+}
+
+.paragraph_circle{
+  text-align: center;
+  color: white;
+  font-weight: 400;
+}
+
+/* =================================
+                  Quiz
+==================================== */
+
+@keyframes fadeInRight {
+   0% {
+      opacity: 0;
+      transform: translateX(1000px);
+   }
+
+   100% {
+      opacity: 1;
+      transform: translateX(0);
+   }
+}
+
+@keyframes fadeInLeft {
+   0% {
+      opacity: 0;
+      transform: translateX(-1000px);
+   }
+
+   100% {
+      opacity: 1;
+      transform: translateX(0);
+   }
+}
+
+@keyframes showUp{
+  0%{
+    opacity: 0;
+  }
+
+  100%{
+    opacity: 1;
+  }
+}
+
+.note_animation{
+  animation: showUp 2s 1s ease-out forwards;
+}
+
+.test_div{
+  transform: translateX(-1000px);
+}
+
+.note_organization{
+  font-size: 30px;
+  opacity: 0;
+  color: #F16868;
+}
+
+.animation_quiz{
+  animation: fadeInLeft 2s 1s ease-out forwards;
+}
+
+.animation_section{
+  animation: fadeInRight 1.5s ease-out forwards;
+}
+
+.remove_class{
+  transform: translateX(1000px);
+}
+
+.test_div{
+  margin-top: 50px;
+}
+
+hr{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+#typed{
+  font-size: 36px;
+  font-weight: 300;
+  text-align: center;
+  display: inline;
+}
+
+.tooltip-inner {
+  text-align: left;
+  font-size: 12px;
+}
+
+
+.background {
+    fill: none;
+    pointer-events: all;
+}
+
+.feature {
+    fill: #aaa;
+    cursor: pointer;
+}
+
+.feature.active {
+    fill: #636363;
+}
+
+.mesh {
+    fill: none;
+    stroke: #fff;
+    /*stroke-linecap: round;*/
+    /*stroke-linejoin: round;*/
+}
+
+/*referenced from https://www.w3schools.com/howto/howto_css_loader.asp*/
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #db5937; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  display: block;
+  margin: auto;
+  padding: 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

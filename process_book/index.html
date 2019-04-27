@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Process Book: A Visualization for Global Terrorism</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!--  Navbar: Adapted from: https://getbootstrap.com/docs/4.3/components/navbar/-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="https://wustl.edu/"><i class="fas fa-book"></i> Process Book</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar2" aria-controls="navbar2" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar2">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="#background">Overview and Motivation<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#relatedWork">Objectives</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#questions">Questions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#data">Data</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#design">Design</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#implementation">Implementation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#evaluation">Evaluation</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--  /Navbar  -->
+  <!--  Jumbotron Adapted from: https://getbootstrap.com/docs/4.3/components/jumbotron/ -->
+<div class="jumbotron jumbotron-fluid shadow">
+  <div class="container">
+    <h1 class="display-4 text-center text-danger">A Visualization for Global Terrorism</h1>
+    <div class="my-4">
+      <p class="lead text-center">Isabelle Xu &nbsp;&nbsp;&nbsp;isabelle.xu@wustl.edu &nbsp;&nbsp;&nbsp;451246 <br>Saulet Yskak &nbsp;&nbsp;&nbsp;saulet@wustl.edu &nbsp;&nbsp;&nbsp;467511<br>Zhikai Chen &nbsp;&nbsp;&nbsp;chen.zhikai@wustl.edu &nbsp;&nbsp;&nbsp;451501</p>
+    </div>
+    <div class="textJumbotron">
+      Project Repository: <a href="https://github.com/washuvis/terrorism">https://github.com/washuvis/terrorism</a><br>
+      Dataset: <a href="https://www.kaggle.com/START-UMD/gtd">https://www.kaggle.com/START-UMD/gtd</a>
+    </div>
+  </div>
+</div>
+<!--  /Jumbotron -->
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-lg-12">
+      <h2 class="my-4 text-danger" id="background">Overview and Motivation <i class="fas fa-bullseye fa-sm"></i> </h2>
+      <p>
+        Our visualization aims to help illuminate how terrorist attacks changed over the years, in addition to showing
+        any trends that may appear. This is especially relevant considering different current events all over the world
+        brought to light by modern social media and digital outlets. We recognize that this is a serious and sensitive
+        topic that deserves to be analyzed, and wish to display the data in a neutral unbiased light without sensationalist
+        purposes.
+      </p>
+      <p>
+        Source:
+        <a href="https://www.cnn.com/2019/03/15/asia/new-zealand-christchurch-attack-what-we-know-intl/index.html">https://www.cnn.com/2019/03/15/asia/new-zealand-christchurch-attack-what-we-know-intl/index.html</a>
+      </p>
+    </div>
+    <div class="col-12 col-lg-12">
+      <hr >
+      <h2 class="my-4 text-danger" id="relatedWork">Related Work <i class="fas fa-user-friends fa-sm"></i></h2>
+      There are a number of different sources that provided inspiration to this project. The visualizations themselves
+      were heavily inspired by some previous studio work involving mercator maps, as well as a previous assignment that
+      dealt with showing political leanings across the different states of the USA. In addition, a visualization linked
+      from from database used influenced several decisions made: https://www.start.umd.edu/gtd/.
+      <br><br>
+    </div>
+    <div class="row">
+      <div class="col-sm" >
+        <img src="img/electoralMap.png" class="img-thumbnail rounded mx-auto d-block shadow mb-4" alt="Electoral Map">
+      </div>
+      <div class="col-sm" >
+        <img src="img/terrorism.png" class="img-thumbnail rounded mx-auto d-block shadow mb-4" alt="Example Map">
+      </div>
+    </div>
+    <div class="col-12 col-lg-12">
+      <hr>
+      <h2 class="my-4 text-danger" id="questions">Questions <i class="fas fa-question-circle fa-sm"></i></h2>
+      <p>
+        Some questions we are trying to answer are what are some of the trends involving global terrorism attacks? Have
+        the frequency of such attacks increased over the last couple of years? How have certain factors influenced such
+        attacks? These questions have evolved over the project as we started to hone into what available data was
+        available to us, as well as how much of the data we could process reasonably over the timespan of this project.
+        For example, we started to notice how a vast majority of the terrorist attacks were of a smaller magnitude in
+        comparison with the largest attacks which made the information more difficult to display on the map. This lead
+        to the question of if most terrorist attacks are of those with smaller, unconnected backgrounds rather than solely
+        dominated by large well known groups with a clear agenda. There were also a surprising number of countries with
+        no recorded terrorist attacks at all, which made us wonder if this was due to lack of information from our
+        chosen data set rather than there is actually no attacks in those areas.
+      </p>
+    </div>
+    <div class="col-12 col-lg-12">
+      <hr>
+      <h2 class="my-4 text-danger" id="data">Data <i class="fas fa-database fa-sm"></i></h2>
+      <p>
+        We retrieved our data from <a href="https://www.kaggle.com/START-UMD/gtd">https://www.kaggle.com/START-UMD/gtd</a>,
+        then proceeded to process it both through Javascript and by manual cleanup in order to mold it into a usable
+        format. We also utilized some available topojson and geo json for dividing up the maps by country.
+      </p>
+    </div>
+    <div class="col-12 col-lg-12">
+      <h4 class="my-4 text-danger">Exploratory Data Analysis <i class="fas fa-search fa-sm"></i></h4>
+      <!--What visualizations did you use to look at your data initially? What insights did you gain?
+      How did these insights inform your design?-->
+      <p>
+        We initially went with a main map view with plainly plotted points representing where each terrorist attack
+        took place. We were able to then observe how these points changed over the years. In order to add more information
+        to our visualization, we then added scaling and colors, in addition to additional views. Some insights we gained
+        were that we needed to use log scaling instead of linear scaling since the discrepancy between the number of attacks
+        with smaller casualty numbers greater outweighed those with larger numbers of casualties. We also lacked visualizations
+        to show general overviews by country, which we later added.
+      </p>
+    </div>
+    <div class="col-12 col-lg-12">
+      <hr>
+      <h2 class="my-4 text-danger" id="design">Design Evolution <i class="fas fa-signal fa-sm"></i></h2>
+      <!--What are the different visualizations you considered? Justify the design decisions you made using the-->
+      <!--perceptual and design principles you learned in the course.-->
+      <p>
+        Some different visualizations we considered were dynamic block charts, connected force charts, and many different
+        variations of our final map based visualization (These can be viewed below). Our final design choices were made
+        with the goal of displaying our data in the more efficient and clear way possible while at the same time making
+        it interactive and dynamic. The user is able to choose a range of time in years or a single year to display data
+        pertaining to those specific years, not unlike the brushing feature we implemented in class before. The user can
+        also select a single country to get a summary of the data for that specific place. In addition, The color scheme
+        was chosen to furthermore illuminate the differences in severity of each attack, and was labeled using a dynamic
+        legend which redraws every time the slider is changed. Lastly, tool tips and additional visualizations (a bar
+        chart and a bubble chart) were implemented to give the viewer another point of view for the data.
+      </p>
+    </div>
+    <div class="col-12 col-lg-12">
+      <h4 class="my-4 text-danger" >Sketches and Screenshots <i class="fas fa-edit fa-sm"></i></h4>
+      <h5 class="my-3">Sketches: World Map with supplementary graphs <i class="fas fa-globe-americas fa-sm"></i></h5>
+      <div class="row sketches1">
+        <div class="col-sm" >
+          <img src="img/1.png" class="img-thumbnail rounded mx-auto d-block shadow mb-4" alt="Sketch 1">
+        </div>
+        <div class="col-sm">
+         <img src="img/2.png" class="img-thumbnail rounded mx-auto d-block shadow mb-4" alt="Sketch 2">
+        </div>
+        <div class="col-sm">
+          <img src="img/3.JPG" class="img-thumbnail rounded mx-auto d-block shadow mb-4" alt="Sketch 3">
+        </div>
+      </div>
+      <div class="row sketches2">
+        <div class="col-sm">
+          <img src="img/4.png" class="img-thumbnail rounded mx-auto d-block shadow mb-4" alt="Sketch 4">
+        </div>
+        <div class="col-sm">
+          <img src="img/5.JPG" class="img-thumbnail rounded mx-auto d-block shadow mb-4" alt="Sketch 5">
+        </div>
+      </div>
+      <h3 class="my-3 mt-4">Final Design <i class="fas fa-check-circle fa-sm"></i></h3>
+      <img src="img/6.JPG" id="finalDesign" class="img-thumbnail rounded mx-auto d-block shadow mb-4" alt="Sketch Final Design">
+    </div>
+    <div class="row sketches3">
+      <h3 class="my-3 mt-4">Milestone 1: Prototype <i class="fas fa-tools fa-sm"></i></h3>
+      <img src="img/map1.png" class="img-thumbnail rounded mx-auto d-block shadow mb-4 map" alt="Map update 1">
+      <img src="img/modal.png" class="img-thumbnail rounded mx-auto d-block shadow mb-4 map" alt="Hover">
+      <img src="img/bar1.png" class="img-thumbnail rounded mx-auto d-block shadow mb-4 bar" alt="bar update 1">
+    </div>
+    <div class="row">
+      <h3 class="my-3">Milestone 2: Refinement and Additional Views <i class="fas fa-users-cog fa-sm"></i></h3><br><br>
+    </div>
+    <div class="row sketches4">
+      <div class="col-sm">
+        <img src="img/addCharts.png" class="img-thumbnail rounded mx-auto d-block shadow mb-4" alt="additional Charts">
+      </div>
+      <div class="col-sm">
+        <img src="img/bubble.png" class="img-thumbnail rounded mx-auto d-block shadow mb-4" alt="bubble">
+      </div>
+      <img src="img/detail.png" class="img-thumbnail rounded mx-auto d-block shadow mb-4 map" alt="Detailed">
+    </div>
+    <div class="col-12 col-lg-12">
+      <hr>
+      <h2 class="my-4 text-danger" id="implementation">Implementation <i class="fas fa-edit fa-sm"></i></h2>
+      <!--Describe the intent and functionality of the interactive visualizations you implemented.-->
+      <!--Provide clear and well-referenced images showing the critical design and interaction elements.-->
+      <p>
+        Our final visualization can be broken down into several parts: (1) Main map view (2) Country Zoom view
+        (3) Bar chart (4) Line chart (5) Interactive bubble chart. Corresponding images can be seen in the sketches and
+        screenshots section of this process book above. The main map view serves to give an overview of recorded
+        terrorist attacks in regards to the selected years, which can be manipulated by the user. The main map also
+        implements tool tips, and each bubble can be selected to give a more detailed profile of that specific attack.
+        The country zoom gives a closer, more detailed, summarized look into each country's attack record. The bar
+        chart and line charts give additional perspectives on all of the data in a dynamic animated manner. Lastly, the
+        interactive bubble chart allows the user to interact with the visualization, while displaying the information
+        in the end.
+      </p>
+
+    </div>
+    <div class="col-12 col-lg-12">
+      <hr>
+      <h2 class="my-4 text-danger" id="User tests">User Testing and Results</h2>
+      <p>
+        Here were several suggestions made during the final round of user testing:
+        (1) Add list modal view to places with more than one attack
+        (2) A little confusing that circle radius indicates casualty number instead of total number of attacks in the region
+        (3) Move supplementary charts tab and add map to somewhere more obvious
+        (4) Perhaps add more map info (dotted lines for territory borders, etc)
+      </p>
+      <p>
+        In regards to time, we have discussed implementing several of these changes while keeping other original
+        implementations based on priority. For example, we have looked into adding a loading icon in order to notify
+        the user when the visualization has finished loading all the data (which is a lot!). Several typos and title
+        changes were also implemented, along with several placement shifts due to the feedback we got.
+      </p>
+    </div>
+    <div class="col-12 col-lg-12">
+      <hr>
+      <h2 class="my-4 text-danger" id="evaluation">Evaluation <i class="fas fa-award fa-sm"></i></h2>
+      <!--What did you learn about the data by using your visualizations? How did you answer your questions? -->
+      <!--How well does your visualization work, and how could you further improve it?-->
+      <p>
+        Using our visualizations, we learned that in terms of number of events, most terrorist attacks in recent years
+        were in fact committed by religious or military groups, with one of the largest attacks being that of 9/11. Also,
+        although the number of individual attacks seemed to have steadily increased over the years, the total number of
+        casualties have fluctuated quite a bit. We also should be wary about the accuracy of our data in terms of missing
+        entries, especially in earlier years. Our data could very be missing many attacks versus the reporting power that
+        improved technology has offered us today. So overall, although there is the possibility of missing data, our
+        visualization does serve to answer our original questions adequately.
+      </p>
+      <p>
+        Now a way that this visualization could further improve would be if the data set contained even greater information
+        about attacks in years prior to 1970. This is since although Islamic terrorist groups are seen as a major
+        perpetrator recently, there have been differing trends in the past in regards to the current events of those
+        times. The maps could also be more detailed, with the possibility of adding capitals or border paths, which have
+        in fact changed as countries split and merged. The map could even be translated into using an API such as Mapbox,
+        which is also utilized by apps such as Snapchat and Facebook.
+
+      </p>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
